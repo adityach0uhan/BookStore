@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
     res.send("Home Route")
 })
 
-
+app.use(express.json())
 app.use('/', bookRoute);
 
 

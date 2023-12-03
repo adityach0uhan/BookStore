@@ -1,13 +1,11 @@
 import mongoose from "mongoose";
-import dotenv from 'dotenv'
-dotenv.config()
-const URI = process.env.MONGO_DB_URI
-export function dbConnect() {
 
+export function dbConnect(URI) {
+    console.log("Database Connecting..........⏲ ")
     mongoose.connect(URI).then(() => {
-        console.log("DataBase is Connnected")
+        console.log("DataBase Connnected Succesfully 🙂")
     }).catch((error) => {
-        console.log(error)
+        console.log("Error while connecting to the database ⚠ ")
     })
 }
 

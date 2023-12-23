@@ -18,7 +18,7 @@ router.get('/books', async (req, res) => {
 
 
 // to get One books 
-router.get('/books:id', async (req, res) => {
+router.get('/books/:id', async (req, res) => {
     const id = req.params.id;
     console.log(id)
     try {

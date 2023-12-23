@@ -64,9 +64,9 @@ router.put('/books/:id', async (req, res) => {
         //     })
         // }
         const id = req.params.id
-        const result = await books.findByIdAndUpdate(id,req.body)
+        const result = await books.findByIdAndUpdate(id, req.body)
         if (!result) {
-            return res.status(404).json({message:"Book Now found 👎 "})
+            return res.status(404).json({ message: "Book Now found 👎 " })
         }
         res.status(200).json({ message: "Book Updated Succesfully 🔂 " })
 
@@ -74,13 +74,24 @@ router.put('/books/:id', async (req, res) => {
         res.send(error)
     }
 
-
-
-
-
 })
 
+//delete a book
+router.delete("/books/:id", async (req, res) => {
+    try {
+        const id = req.params.id
+        const result = await books.findByIdAndDelete(id);
+        if (!result) {
+            res.status(404).json({message:"Book not found"})
+        } else {
+            res.status(200).json({message:"Book deleted succesfully"})
+        }
 
+    } catch (err) {
+        res.status(404).json({message:err})
+    }
+   
+})
 
 
 

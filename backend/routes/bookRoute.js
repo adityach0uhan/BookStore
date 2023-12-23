@@ -8,7 +8,7 @@ router.get('/books', async (req, res) => {
         const allBooks = await books.find({})
         res.status(200).json({
             TotalBooks: books.length,
-            BookList:allBooks
+            BookList: allBooks
         })
     } catch (err) {
         res.status(404).send("Can't Read Data from DataBase 😴 ")
@@ -54,10 +54,31 @@ router.post('/books', async (req, res) => {
 })
 
 
+// update a book
+router.put('/books/:id', async (req, res) => {
+    const { title, author, publishYear } = req.body;
+    try {
+        // if (!title || !author || !publishYear) {
+        //     return response.status(400).send({
+        //         message: "All Fields Are required to be filled"
+        //     })
+        // }
+        const id = req.params.id
+        const result = await books.findByIdAndUpdate(id,req.body)
+        if (!result) {
+            return res.status(404).json({message:"Book Now found 👎 "})
+        }
+        res.status(200).json({ message: "Book Updated Succesfully 🔂 " })
+
+    } catch (error) {
+        res.send(error)
+    }
 
 
 
 
+
+})
 
 
 

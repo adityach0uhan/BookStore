@@ -66,7 +66,7 @@ router.put('/books/:id', async (req, res) => {
         const id = req.params.id
         const result = await books.findByIdAndUpdate(id, req.body)
         if (!result) {
-            return res.status(404).json({ message: "Book Now found 👎 " })
+            return res.status(404).json({ message: "Book Not found 👎 " })
         }
         res.status(200).json({ message: "Book Updated Succesfully 🔂 " })
 

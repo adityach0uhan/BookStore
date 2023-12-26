@@ -1,30 +1,31 @@
-'use client'
+"use client"
 import React from 'react'
 const AllBooks = ({ booklist }) => {
-    console.log(booklist)
     return (
         <>
-            <div className='w-full h-full'>
-                <table className='table-auto'>
-
-                    <tr>
-                        <th>No.</th>
-                        <th>Title</th>
-                        <th>author</th>
-                        <th>Publish Year</th>
-                        <th>Task</th>
-                    </tr>
-
+            <div className='  m-auto text-center'>
+                <table className='table-auto text-center m-auto border-'>
+                    <thead>
+                        <tr className='flex gap-5 border-black'>
+                            <th className='w-40'>No.</th>
+                            <th className='w-40'>Title</th>
+                            <th className='w-40'>author</th>
+                            <th className='w-40'>Publish Year</th>
+                            <th className='w-40'>Task</th>
+                        </tr>
+                    </thead>
                     {
                         booklist.map((item, index) => {
                             return (
-                                <tr>
-                                    <td>{index + 1}</td>
-                                    <td>{item.title}</td>
-                                    <td>{item.author}</td>
-                                    <td>{item.publishYear}</td>
-                                    <td><button>Edit</button></td>
-                                </tr>
+                                <tbody>
+                                    <tr key={index} className='m-2 flex gap-5 '>
+                                        <td className='w-40'>{index + 1}</td>
+                                        <td className='w-40'>{item.title}</td>
+                                        <td className='w-40'>{item.author}</td>
+                                        <td className='w-40'>{item.publishYear}</td>
+                                        <td className='w-40'><button>Edit</button></td>
+                                    </tr>
+                                </tbody>
                             )
                         })
                     }

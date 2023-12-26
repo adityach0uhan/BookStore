@@ -1,5 +1,7 @@
 "use client"
 import axios from "axios"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
 import AllBooks from "./components/AllBooks"
 import { useEffect,useState } from "react"
 export default function Home() {
@@ -27,6 +29,7 @@ const [loading,setLoading]=useState(false)
 
   return (
     <>
+      <div className="w-full  text-center text-2xl mt-2 mb-10"><h1><span className="mr-4">Book Store</span><FontAwesomeIcon icon={faBook} /></h1></div>
       {loading ? "Loading" : <AllBooks booklist={bookData}/> }
     </>
   )

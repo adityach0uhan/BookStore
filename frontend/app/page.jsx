@@ -5,6 +5,7 @@ import { faBook } from '@fortawesome/free-solid-svg-icons'
 import AllBooks from "./components/AllBooks"
 import { useEffect, useState } from "react"
 import AddBook from "./components/AddBook"
+import Loader from "./components/Loader"
 
 
 
@@ -33,11 +34,15 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full  text-center text-2xl mt-2 mb-10"><h1><span className="mr-4">Book Store</span><FontAwesomeIcon icon={faBook} /></h1></div>
-      {loading ? "Loading" : <AllBooks booklist={bookData} />}
+      {/* <div className="w-full  text-center text-2xl mt-2 mb-10"><h1><span className="mr-4">Book Store</span><FontAwesomeIcon icon={faBook} /></h1></div> */}
+      {
+        loading ?
+          <Loader />
+          :
+          < AllBooks booklist={bookData} />}
 
 
-      <AddBook />
+      {/* <AddBook /> */}
     </>
   )
 }

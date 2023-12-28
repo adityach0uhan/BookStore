@@ -14,7 +14,8 @@ const AllBooks = ({ booklist }) => {
     return (
         <>
             <div className='  m-auto text-center '>
-                <h2 className='text-2xl m-10'>Book Store</h2>
+                <div className='text-2xl m-10'>Book Store<div><button >Add more book</button></div></div>
+                
                 <table className='table-fixed m-auto  '>
                     <thead className=''>
                         <tr className='flex box-border mb-6 items-center justify-self-start gap-5 '>

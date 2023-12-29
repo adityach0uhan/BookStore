@@ -1,10 +1,7 @@
 "use client"
 import axios from "axios"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
 import AllBooks from "./components/AllBooks"
 import { useEffect, useState } from "react"
-import AddBook from "./components/AddBook"
 import Loader from "./components/Loader"
 
 

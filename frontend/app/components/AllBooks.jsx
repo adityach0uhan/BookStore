@@ -1,7 +1,9 @@
 "use client"
 import React, { useState } from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTable, faIdCard, faPlus } from '@fortawesome/free-solid-svg-icons'
 import TableView from './TableView'
+import { CardView } from './CardView'
 const AllBooks = ({ booklist }) => {
 
     const [view, setview] = useState("table")
@@ -12,17 +14,22 @@ const AllBooks = ({ booklist }) => {
     return (
         <>
             <div className='  m-auto text-center '>
-                <div className='text-2xl m-10'>Book Store<div><button >Add more book</button></div></div>
-                
-                <div className='flex w-screen h-40 '>
-                    <div><span onClick={()=> handelView("table")}>Table View</span></div>
-                    <div><span onClick={()=> handelView("card")}>Card View</span></div>
+                <div className='flex w-screen h-16 items-center justify-around mb-9 mt-2 gap-4 '>
+                    <h2 className='text-2xl font-semibold font-mono'>Book Store</h2>
+                    <button
+                        className='font-light bg-yellow-300 hover:bg-yellow-400 border-2 border-black border text-sm rounded p-2 font-mono'>
+                        Add Book<FontAwesomeIcon className='ml-2' icon={faPlus} />
+                    </button>
+                    <button
+                        className='font-mono font-light bg-green-300 hover:bg-green-400 border-2 border-black border text-sm rounded p-2' onClick={() => handelView("table")}>
+                        Table View<FontAwesomeIcon className='ml-2' icon={faTable} />
+                    </button>
+                    <button
+                        className='font-mono font-light bg-green-300 hover:bg-green-400 border-2 border-black text-sm border rounded p-2' onClick={() => handelView("card")}>
+                        Card View<FontAwesomeIcon className='ml-2' icon={faIdCard} />
+                    </button>
                 </div>
-                
-
-                {view == "table" ? <TableView booklist={ booklist} />: "Card"}
-                
-
+                {view == "table" ? <TableView booklist={booklist} /> : <CardView booklist={booklist} />}
             </div>
         </>
     )

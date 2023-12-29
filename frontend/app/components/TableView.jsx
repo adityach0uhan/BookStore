@@ -25,9 +25,9 @@ const TableView = ({ booklist }) => {
                                 <td className='font-sans font-light min-w-48 capitalize p-2 m-2 rounded border border-1 border-black capitalize'>{item.author}</td>
                                 <td className='font-sans font-light min-w-48 capitalize p-2 m-2 rounded border border-1 border-black capitalize'>{item.publishYear}</td>
                                 <td className='font-sans font-light min-w-48 capitalize p-2 m-2 rounded border border-1 border-black capitalize '>
-                                    <Link href="/deleteBook">
+                                    <Link href={`/deleteBook/${item._id}`}>
                                         <button  className='w-16 border-black border mr-3  bg-red-400 hover:bg-red-500 rounded'><FontAwesomeIcon icon={faTrash} /></button></Link>
-                                    <Link href="/editBook">
+                                    <Link href={`/editBook/${item._id}`}>
                                         <button className='w-16 border-black border bg-green-400 hover:bg-green-500 rounded'><FontAwesomeIcon icon={faPencil} /></button>
                                     </Link>
                                 </td>

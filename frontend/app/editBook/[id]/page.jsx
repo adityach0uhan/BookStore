@@ -1,12 +1,12 @@
 'use client'
-
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'next/navigation'
-
+import { useRouter } from 'next/navigation'
 
 const EditBook = () => {
+  const router=useRouter()
   const { id } = useParams()
   const [title, settitle] = useState("")
   const [author, setauthor] = useState("")
@@ -29,18 +29,13 @@ const EditBook = () => {
 
   const handelSubmit = () => {
 
-    console.log(author)
-    console.log(publishYear)
-    console.log(title)
-
     const data = {
       title: title,
       author: author,
       publishYear: publishYear
     }
     axios.put(`http://localhost:5000/books/${id}`, data).then(() => {
-      console.log("Book edited successfullt")
-      alert("Book edited Succesfully")
+      router.back()
     }).catch((err) => {
       alert("Some error occurred ! , book not creare")
       console.log(err)

@@ -2,15 +2,15 @@
 import axios from "axios"
 import Router from 'next/router'
 import { useParams } from 'next/navigation'
-
+import { useRouter } from "next/navigation"
 const DeletePage = () => {
   const { id } = useParams()
+  const router=useRouter()
   const deleteBook = () => {
 
     axios.delete(`http://localhost:5000/books/${id}`).
       then(() => {
-        alert("Done Deleting")
-        Router.back()
+        router.back()
       }).then(() => {
 
       }).

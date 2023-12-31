@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
+import Back2Home from '@/app/components/Back2Home'
 
 const EditBook = () => {
   const router=useRouter()
@@ -47,6 +48,7 @@ const EditBook = () => {
 
   return (
     <>
+      <Back2Home/>
       <div className='flex p-5 flex-col items-center justify-center w-full '>
         <span className='text-center text-2xl p-8'>Edit Book Id : {id} </span>
         <div className='w-1/3 border-black rounded border-1 flex items-center justify-center gap-5  border p-2 mb-2'>

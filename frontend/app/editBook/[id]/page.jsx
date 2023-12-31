@@ -47,21 +47,31 @@ const EditBook = () => {
 
   return (
     <>
-      <div className='flex p-10 flex-col align-center justify-center w-full '>
-        <span className='text-center text-2xl'>Edit Book</span>
-        <div className='w-100 border-black rounded border-1 border p-5'>
-          <label htmlFor="title" className='w-60 h-10 mr-9 rounded text-center'>Title</label>
-          <input type="text" className='w-60 h-7 p-3 rounded' value={title} onChange={(e) => { settitle(e.target.value) }} id='title' />
+      <div className='flex p-5 flex-col items-center justify-center w-full '>
+        <span className='text-center text-2xl p-8'>Edit Book Id : {id} </span>
+        <div className='w-1/3 border-black rounded border-1 flex items-center justify-center gap-5  border p-2 mb-2'>
+          <div className=' w-1/4 h-full  rounded text-center'><span className='text-center'>Title</span></div>
+          <div className=' w-3/4 h-full rounded '>
+            <input type="text" className='w-full h-7  border  focus:bg-yellow-200 pl-3 border-1 border-black text-l rounded' value={title} onChange={(e) => { settitle(e.target.value) }} id='title' />
+          </div>
+
         </div>
-        <div className='w-100 border-black rounded border-1 border p-5'>
-          <label htmlFor="author" className='w-60 h-10  mr-9  rounded text-center'>Author</label>
-          <input type="text" className='w-60 h-7 p-3 rounded' id='author' value={author} onChange={(e) => { setauthor(e.target.value) }} />
+        <div className='w-1/3 border-black rounded border-1 flex items-center justify-center gap-5  border p-2 mb-2'>
+          <div className=' w-1/4 h-full  rounded text-center'><span className='text-center'>Author</span></div>
+          <div className=' w-3/4 h-full rounded '>
+
+            <input type="text" className='w-full h-7  border  focus:bg-yellow-200 pl-3 border-1 border-black text-l rounded' id='author' value={author} onChange={(e) => { setauthor(e.target.value) }} />
+          </div>
         </div>
-        <div className='w-100 border-black rounded border-1 border p-5'>
-          <label htmlFor="publish " className='w-60  mr-9  h-10 rounded text-center'>Publish Year</label>
-          <input type="text" id='publish' className='w-60 h-7 p-3 rounded' value={publishYear} onChange={(e) => { setpublishYear(e.target.value) }} /></div>
-        <div className='mt-4 w-full flex justify-center'>
-          <button onClick={() => handelSubmit()} className='w-30 m-auto h-5 p-4 text-sm rounded border border-black border-1'><span className='m-auto h-full w-full'>Save</span></button>
+        <div className='w-1/3 border-black rounded border-1 flex items-center justify-center gap-5  border p-2 mb-2'>
+          <div className=' w-1/4 h-full  rounded text-center'><span className='text-center'>Publish year</span></div>
+          <div className=' w-3/4 h-full rounded '>
+            <input type="text" id='publish' className=' focus:bg-yellow-200 w-full h-7  border pl-3 border-1 border-black text-l rounded' value={publishYear} onChange={(e) => { setpublishYear(e.target.value) }} /></div></div>
+        <div className='w-1/3 border-black rounded border-1 flex items-center justify-center gap-5  border p-2 mb-2'>
+          <div className=' w-3/4 h-full rounded '>
+
+            <button onClick={() => handelSubmit()} className='w-full bg-green-400 hover:bg-green-600 m-auto h-9  text-sm  text-center rounded border border-black border-1'><span className='m-auto h-full w-full'>Save  </span></button>
+          </div>
         </div>
       </div>
     </>
